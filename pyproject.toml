@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pylinphonc"
+version = "0.1.0"
+description = "Python replacement for linphonc.exe – Linphone CLI client using liblinphone 5.x via ctypes"
+readme = "README.md"
+license = { text = "AGPL-3.0-or-later" }
+requires-python = ">=3.8"
+keywords = ["linphone", "sip", "voip", "linphonc", "liblinphone", "cli"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Communications :: Internet Phone",
+    "Topic :: Communications :: Telephony",
+]
+
+[project.scripts]
+pylinphonc = "pylinphonc._cli:main"
+
+[project.urls]
+Homepage = "https://github.com/YOUR_USERNAME/pylinphonc"
+Issues   = "https://github.com/YOUR_USERNAME/pylinphonc/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]

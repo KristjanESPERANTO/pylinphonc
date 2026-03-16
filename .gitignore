@@ -1,0 +1,15 @@
+# Build / packaging artefacts
+*.egg-info/
+dist/
+build/
+__pycache__/
+*.pyc
+
+# Test / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
