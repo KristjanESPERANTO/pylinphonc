@@ -37,3 +37,7 @@ Issues   = "https://github.com/YOUR_USERNAME/pylinphonc/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[project.optional-dependencies]
+dev   = ["pytest"]
+build = ["pyinstaller"]

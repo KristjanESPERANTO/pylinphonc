@@ -67,13 +67,21 @@ def main() -> None:
     log = logging.getLogger("pylinphonc")
 
     # ── Resolve paths ────────────────────────────────────────────────────────
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    dll_dir = args.dll_dir or script_dir
+    # When built with PyInstaller (--onefile or --onedir), all bundled files
+    # (DLLs, share/) are extracted to sys._MEIPASS at startup.
+    # In that case --dll-dir is not required; we default to the bundle dir.
+    _bundle_dir = getattr(sys, "_MEIPASS", None)
+    script_dir  = _bundle_dir or os.path.dirname(os.path.abspath(__file__))
+
+    dll_dir  = args.dll_dir or script_dir
     lib_name = get_lib_name()
 
     if not os.path.isfile(os.path.join(dll_dir, lib_name)):
         log.error("%s not found in: %s", lib_name, dll_dir)
-        log.error("Use --dll-dir to point to the SDK lib directory.")
+        if _bundle_dir:
+            log.error("Bundle may be missing the SDK DLLs – rebuild with build.bat.")
+        else:
+            log.error("Use --dll-dir to point to the SDK lib directory.")
         sys.exit(1)
 
     config_path = args.config

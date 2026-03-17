@@ -4,6 +4,7 @@ dist/
 build/
 __pycache__/
 *.pyc
+*.spec
 
 # Test / coverage
 .pytest_cache/
