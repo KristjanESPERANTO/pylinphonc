@@ -45,6 +45,10 @@ python -m PyInstaller ^
     --name pylinphonc ^
     --add-binary "%SDK_DIR%\lib\win\x64\*.dll;." ^
     --add-data  "%SDK_DIR%\share;share" ^
+    --hidden-import win32service ^
+    --hidden-import win32serviceutil ^
+    --hidden-import win32event ^
+    --hidden-import servicemanager ^
     src\pylinphonc\__main__.py
 
 if %ERRORLEVEL% EQU 0 (

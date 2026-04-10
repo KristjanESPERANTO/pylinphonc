@@ -32,12 +32,13 @@ classifiers = [
 pylinphonc = "pylinphonc._cli:main"
 
 [project.urls]
-Homepage = "https://github.com/YOUR_USERNAME/pylinphonc"
-Issues   = "https://github.com/YOUR_USERNAME/pylinphonc/issues"
+Homepage = "https://github.com/KristjanESPERANTO/pylinphonc"
+Issues   = "https://github.com/KristjanESPERANTO/pylinphonc/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]
 
 [project.optional-dependencies]
-dev   = ["pytest"]
-build = ["pyinstaller"]
+dev     = ["pytest"]
+build   = ["pyinstaller"]
+windows = ["pywin32"]
