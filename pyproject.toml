@@ -40,5 +40,5 @@ where = ["src"]
 
 [project.optional-dependencies]
 dev     = ["pytest"]
-build   = ["pyinstaller"]
+build   = ["pyinstaller", "pywin32"]
 windows = ["pywin32"]
